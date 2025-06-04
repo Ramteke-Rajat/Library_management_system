@@ -213,7 +213,7 @@ SELECT * FROM books
 WHERE category = 'Classic';
 ```
 
-8. **Task 8: Find Total Rental Income by Category**:
+Task 8: **Find Total Rental Income by Category**:
 
 ```sql
 SELECT
@@ -229,13 +229,13 @@ GROUP BY category
 ORDER by total_rent
 ```
 
-9. **List Members Who Registered in the Last 180 Days**:
+Task 9. **List Members Who Registered in the Last 180 Days**:
 ```sql
 SELECT * FROM members
 WHERE reg_date >= CURRENT_DATE - INTERVAL '180 days';
 ```
 
-10. **List Employees with Their Branch Manager's Name and their branch details**:
+Task 10. **List Employees with Their Branch Manager's Name and their branch details**:
 
 ```sql
 SELECT 
@@ -280,7 +280,7 @@ WHERE rst.return_id is NULL
 
 ## Advanced SQL Operations
 
-**Task 13: Identify Members with Overdue Books**  
+Task 13: **Identify Members with Overdue Books**  
 Write a query to identify members who have overdue books (assume a 30-day return period). Display the member's_id, member's name, book title, issue date, and days overdue.
 
 ```sql
@@ -308,7 +308,7 @@ WHERE
 	CURRENT_DATE - ist.issued_date > 30
 ```
 
-**Task 14: Update Book Status on Return**  
+Task 14: **Update Book Status on Return**  
 Write a query to update the status of books in the books table to "Yes" when they are returned (based on entries in the return_status table).
 
 ```sql
@@ -353,7 +353,7 @@ CALL add_return_record('RS138', 'IS140', 'Damaged');
 
 ```
 
-**Task 15: Branch Performance Report**  
+Task 15: **Branch Performance Report**  
 Create a query that generates a performance report for each branch, showing the number of books issued, the number of books returned, and the total revenue generated from book rentals.
 
 ```sql
@@ -385,7 +385,7 @@ ORDER BY SUM(bk.rental_price) DESC;
 SELECT * FROM branch_report;
 ```
 
-**Task 16: CTAS: Create a Table of Active Members**  
+Task 16: **CTAS: Create a Table of Active Members**  
 Use the CREATE TABLE AS (CTAS) statement to create a new table active_members containing members who have issued at least one book in the last 2 months.
 
 ```sql
@@ -406,7 +406,7 @@ WHERE
 SELECT * FROM avtive_members
 ```
 
-**Task 17: Find Employees with the Most Book Issues Processed**  
+Task 17: **Find Employees with the Most Book Issues Processed**  
 Write a query to find the top 3 employees who have processed the most book issues. Display the employee name, number of books processed, and their branch.
 
 ```sql
@@ -425,7 +425,7 @@ ORDER BY COUNT(ist.issued_id) DESC
 LIMIT 3;
 ```
 
-**Task 18: Stored Procedure**
+Task 18: **Stored Procedure**
 Objective:
 Create a stored procedure to manage the status of books in a library system.
 Description:
