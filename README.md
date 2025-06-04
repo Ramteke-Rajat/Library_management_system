@@ -38,7 +38,7 @@ CREATE TABLE branch
             contact_no VARCHAR(10)
 	);
 
--- creating employee table
+-- creating employees table
 DROP TABLE IF EXISTS employees;
 CREATE TABLE employees
 	(
@@ -72,7 +72,7 @@ CREATE TABLE members
 	reg_date DATE
 	);
 
--- creating members table
+-- creating issued_status table
 DROP TABLE IF EXISTS issued_status;
 CREATE TABLE issued_status
 	(
@@ -84,7 +84,7 @@ CREATE TABLE issued_status
 	issued_emp_id VARCHAR(10)  --FK
 	);
 
--- creating members table
+-- creating return_status table
 DROP TABLE IF EXISTS return_status;
 CREATE TABLE return_status
 	(
@@ -102,6 +102,39 @@ CREATE TABLE return_status
 - **Read**: Retrieved and displayed data from various tables.
 - **Update**: Updated records in the `employees` table.
 - **Delete**: Removed records from the `members` table as needed.
+
+### 3. Created relationships between table using foreign keys
+
+```sql
+ALTER TABLE issued_status
+ADD CONSTRAINT fk_members
+FOREIGN KEY (issued_member_id)
+REFERENCES members(member_id);
+
+
+ALTER TABLE issued_status
+ADD CONSTRAINT fk_books
+FOREIGN KEY (issued_book_isbn)
+REFERENCES books(isbn);
+
+
+ALTER TABLE issued_status
+ADD CONSTRAINT fk_employees
+FOREIGN KEY (issued_emp_id)
+REFERENCES employees(emp_id);
+
+
+ALTER TABLE employees
+ADD CONSTRAINT fk_branch
+FOREIGN KEY (branch_id)
+REFERENCES branch(branch_id);
+
+ALTER TABLE return_status
+ADD CONSTRAINT fk_issued_status
+FOREIGN KEY (issued_id)
+REFERENCES issued_status(issued_id);
+```
+
 
 **Task 1. Create a New Book Record**
 -- "978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.')"
