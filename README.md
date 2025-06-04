@@ -8,7 +8,7 @@
 
 This project demonstrates the implementation of a Library Management System using SQL. It includes creating and managing tables, performing CRUD operations, and executing advanced SQL queries. The goal is to showcase skills in database design, manipulation, and querying.
 
-![Library_project](https://www.freepik.com/free-vector/library-interior-empty-room-reading-with-books-wooden-shelves_5467428.htm#fromView=keyword&page=1&position=8&uuid=c8c01604-4da4-4849-8590-3961bec8d32d&query=Library+Png)
+![Library_project](https://images.app.goo.gl/iA8xLpcXyQxSChto7)
 
 ## Objectives
 
