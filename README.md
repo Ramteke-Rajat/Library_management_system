@@ -184,7 +184,7 @@ HAVING COUNT(issued_id) > 1
 
 ### 5. CTAS (Create Table As Select)
 
-- **Task 6: Create Summary Tables**: Used CTAS to generate new tables based on query results - each book and total book_issued_cnt**
+**Task 6: Create Summary Tables**: Used CTAS to generate new tables based on query results - each book and total book_issued_cnt**
 
 ```sql
 CREATE TABLE book_count
